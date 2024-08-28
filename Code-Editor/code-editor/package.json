@@ -1,0 +1,46 @@
+{
+  "name": "code-editor",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@monaco-editor/react": "^4.6.0",
+    "@mui/material": "^5.16.7",
+    "axios": "^1.7.3",
+    "framer-motion": "^11.3.24",
+    "gsap": "^3.12.5",
+    "monaco-editor": "^0.50.0",
+    "react": "^18.3.1",
+    "react-codemirror2": "^8.0.0",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1",
+    "react-router-dom": "^6.26.0",
+    "react-transition-group": "^4.4.5",
+    "styled-components": "^6.1.12"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@types/codemirror": "^5.60.15",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.8.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.9",
+    "vite": "^5.4.0"
+  }
+}
