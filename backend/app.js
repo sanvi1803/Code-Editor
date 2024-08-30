@@ -22,5 +22,5 @@ app.use(cors(corsOptions));
 app.use("/", userRouter)
 // app.use("/user", codeRouter)
 
-app.get('/', (req, res) => res.send('Hello World!'))
+// app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(port, () => console.log(`Example app listening on port http://localhost:${port}`))

@@ -7,7 +7,7 @@ const { isLoggedIn } = require("../middlewares/isLoggedIn")
 const { saveCode, getCode } = require('../controllers/codePen.js');
 const { saveCCode, getCCode } = require('../controllers/code.js');
 router.get('/', (req, res) => {
-    res.send("Hey User!")
+    res.send("Hey User how are u!")
 })
 router.post('/register', registerUser) //wrote this register user function inside controller
 router.post('/login', loginUser) //wrote this register user function inside controller
