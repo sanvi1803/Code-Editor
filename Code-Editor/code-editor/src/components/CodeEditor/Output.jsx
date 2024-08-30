@@ -30,7 +30,6 @@ const Output = ({ editorRef, language }) => {
             setIsLoading(false);
         }
     };
-
     return (
         <Box w="50%">
 

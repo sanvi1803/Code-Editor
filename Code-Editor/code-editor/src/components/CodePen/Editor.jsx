@@ -10,6 +10,7 @@ import 'codemirror/mode/javascript/javascript';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import '../App.css'
+
 function Editor({ heading, logo, value, onChange }) {
     const [open, setOpen] = useState(true);
     // handleChange by default take below three values

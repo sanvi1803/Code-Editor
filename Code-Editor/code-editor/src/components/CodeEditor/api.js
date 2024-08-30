@@ -6,7 +6,7 @@ const API = axios.create({
 });
 // curl -X GET http://emkc.org/api/v2/piston:2000/api/v2/runtimes -H "Content-Type: application/json"
 
-export const executeCode = async (language, sourceCode,input) => {
+export const executeCode = async (language, sourceCode, input) => {
     const response = await API.post("/execute", {
         language: language,
         version: LANGUAGE_VERSIONS[language],
@@ -22,6 +22,6 @@ export const executeCode = async (language, sourceCode,input) => {
 
 const getRuntimes = async () => {
     const response = await API.get("/runtimes");
-    console.log(response.data);
+    // console.log(response.data);
 };
 getRuntimes();

@@ -2,22 +2,28 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import AnimateButtons from './AnimateButtons'
 import { useEffect } from 'react';
+import { useUser } from '../../context/UserContext';
 function RightSide() {
-
+    const { user } = useUser();
+    // const name = user.user.name;
+    // console.log(name);
     useEffect(() => {
+        console.log('User in RightSide:', user);
         AnimateButtons(); // Trigger the animation when the component mounts
-    }, []);
+    }, [user]);
 
     return (
         <Container>
             <div className='flex flex-col button-container'>
-                <Head className='text-3xl mb-4 font-medium editor'>Select Your Editor</Head>
+                <p className='text-4xl'>Welcome, {user ? user.name : 'Guest'}!</p>
+                <Head className='text-md mb-4 font-medium editor'>Select Your Editor</Head>
                 <div className='flex flex-col gap-2 items-center'>
+
                     <Button>
-                        <Link to="/code-editor">Code Forge</Link>
+                        <Link to="/user/code-editor">Code Forge</Link>
                     </Button>
                     <Button>
-                        <Link to="/codepen-editor">Code Canvas</Link>
+                        <Link to="/user/codepen-editor">Code Canvas</Link>
                     </Button>
 
                 </div>
@@ -66,7 +72,7 @@ const Button = styled.button`
 const Head = styled.h1`
     -webkit-text-stroke: 1px #dbd9d96e;
     color:transparent;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 700;
 `
 
