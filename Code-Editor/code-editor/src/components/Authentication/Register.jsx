@@ -1,18 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { FaCodepen } from "react-icons/fa";
 import Input from './Input';
 import Gradient from './Gradient';
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
+import gsap from 'gsap';
 function Register() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: ''
   });
-
+  const [error, setError] = useState("")
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -29,9 +30,25 @@ function Register() {
       navigate("/login")
     } catch (error) {
       console.error('Registration failed:', error.response.data);
+      setTimeout(() => {
+        setError("");
+      }, 3000);
       // Handle registration failure (e.g., display error message)
     }
   };
+
+
+  useEffect(() => {
+    gsap.to(".gradient2", {
+      y: "-=40", // Move 50px upwards
+      x: "+=20", // Move 20px to the right for a diagonal effect
+      duration: 2, // Duration of one cycle
+      ease: "power1.inOut", // Smooth in and out motion
+      yoyo: true, // Make the animation go back and forth
+      repeat: -1, // Repeat indefinitely
+      skewX: 10, // Skew the element by 10 degrees on the X-axis
+    });
+  }, []);
   return (
     <div className='bg-black h-[100vh] text-white'>
       <FaCodepen className='text-white text-3xl z-10 fixed mt-5 ml-[100px]' />
@@ -73,12 +90,16 @@ function Register() {
                 onChange={handleChange} />
             </div>
             <input type="submit" placeholder='Name' className='bg-[#ecf15ed7] cursor-pointer py-2 rounded-md w-[100%] text-black mt-2' />
+            {error && (
+              <p className='text-red-500 text-center mt-2'>{error}</p>
+            )}
             <p className='text-xs text-zinc-600'>By creating an account, you agree to the Terms of Service.We'll occasionally send you account-related emails.</p>
 
             <h3 className='text-sm m-auto'>Already have an account? <Link to="/login" className='text-[#ecf15ec3]'>Login</Link></h3>
           </form>
-
+          <Gradient2 className='absolute left-0 bottom-0 gradient2'></Gradient2>
         </Box>
+
       </div >
     </div>
   )
@@ -95,3 +116,15 @@ const Head = styled.h1`
   justify-content: center;
 `
 
+const Gradient2 = styled.div`
+  height:40vh;
+  width:40vh;
+  background-color: #ECF15E;
+  border-radius: 50%;
+  z-index: 10;
+  filter: blur(180px);
+  top:95%;
+  right: 50%;
+  transform: translate(-50%,-50%);
+  /*left: -50%; */
+`

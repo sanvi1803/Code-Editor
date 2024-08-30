@@ -1,23 +1,19 @@
 const mongoose = require("mongoose");
 
-const codeSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
-    required: true,
-  },
-  language: {
-    type: String,
-    required: true,
-  },
-  code: {
-    type: String,
-    default: "",
-  },
-  input: {
-    type: String,
-    default: "",
-  },
+const codeSchema = mongoose.Schema({
+    language: {
+        type: String,
+        required: true
+    },
+    code: {
+        type: String,
+        required: true
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user',  // Reference back to the user who owns this code
+        required: true
+    }
 }, { timestamps: true });
 
 const Code = mongoose.model("Code", codeSchema);

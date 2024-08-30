@@ -58,7 +58,7 @@ const Button = styled.button`
     font-size: 18px;
     border: 1px solid gray;
     cursor: pointer;
-    transition: 0.3s background-color ease-in;
+    transition: 200ms background-color ease-in;
 
 
     &:hover{
