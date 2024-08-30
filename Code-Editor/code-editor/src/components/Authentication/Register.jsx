@@ -24,7 +24,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://code-editor-backend-7e6i.onrender.com/register', formData);
+      const response = await axios.post('http://localhost:8000/register', formData);
       console.log('Registration successful:', response.data);
       // Handle successful registration (e.g., redirect, show a message)
       navigate("/login")
@@ -41,18 +41,18 @@ function Register() {
   useEffect(() => {
     gsap.to(".gradient2", {
       y: "-=40", // Move 50px upwards
-      x: "+=20", // Move 20px to the right for a diagonal effect
+      x: "+=10", // Move 20px to the right for a diagonal effect
       duration: 2, // Duration of one cycle
       ease: "power1.inOut", // Smooth in and out motion
       yoyo: true, // Make the animation go back and forth
       repeat: -1, // Repeat indefinitely
-      skewX: 10, // Skew the element by 10 degrees on the X-axis
+      skewX: 8, // Skew the element by 10 degrees on the X-axis
     });
   }, []);
   return (
     <div className='bg-black h-[100vh] text-white'>
       <FaCodepen className='text-white text-3xl z-10 fixed mt-5 ml-[100px]' />
-      <Gradient ></Gradient>
+      <Gradient className='gradient2'></Gradient>
       <div>
 
         <Box className='flex flex-col justify-center h-[100vh] w-[40%] m-auto'>
@@ -93,7 +93,7 @@ function Register() {
             {error && (
               <p className='text-red-500 text-center mt-2'>{error}</p>
             )}
-            <p className='text-xs text-zinc-600'>By creating an account, you agree to the Terms of Service.We'll occasionally send you account-related emails.</p>
+            <p className='text-xs text-zinc-600'>By creating an account, you agree to the Terms of Service.</p>
 
             <h3 className='text-sm m-auto'>Already have an account? <Link to="/login" className='text-[#ecf15ec3]'>Login</Link></h3>
           </form>
@@ -123,8 +123,9 @@ const Gradient2 = styled.div`
   border-radius: 50%;
   z-index: 10;
   filter: blur(180px);
-  top:95%;
-  right: 50%;
-  transform: translate(-50%,-50%);
+  /* top:80%; */
+  /* bottom: -50%; */
+  right: 80%;
+  /* transform: translate(-50%,-50%); */
   /*left: -50%; */
 `

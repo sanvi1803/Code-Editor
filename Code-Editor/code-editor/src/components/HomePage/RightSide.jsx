@@ -15,7 +15,7 @@ function RightSide() {
     return (
         <Container>
             <div className='flex flex-col button-container'>
-                <p className='text-4xl'>Welcome, {user ? user.name : 'Guest'}!</p>
+                <p className='text-4xl font-medium'>Welcome, {user ? user.name : 'Guest'}!</p>
                 <Head className='text-md mb-4 font-medium editor'>Select Your Editor</Head>
                 <div className='flex flex-col gap-2 items-center'>
 

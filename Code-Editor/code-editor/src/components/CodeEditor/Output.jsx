@@ -14,7 +14,7 @@ const Output = ({ editorRef, language }) => {
         if (!editorRef.current) return;
         const sourceCode = editorRef.current.getValue();
         try {
-            await axios.post('https://code-editor-backend-7e6i.onrender.com/user/save-codes', { language, code: sourceCode }, { withCredentials: true });
+            await axios.post('http://localhost:8000/user/save-codes', { language, code: sourceCode }, { withCredentials: true });
             toast({
                 title: "Code Saved",
                 description: "Your code was saved successfully.",

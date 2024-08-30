@@ -31,7 +31,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://code-editor-backend-7e6i.onrender.com/login', formData, { withCredentials: true });
+      const response = await axios.post('http://localhost:8000/login', formData, { withCredentials: true });
       console.log('Login successful:', response.data);
       setUser(response.data.user);
       console.log(response.data.user);
@@ -51,7 +51,7 @@ function Login() {
   useEffect(() => {
     gsap.to(".gradient2", {
       y: "-=60", // Move 50px upwards
-      x: "+=20", // Move 20px to the right for a diagonal effect
+      x: "+=10", // Move 20px to the right for a diagonal effect
       duration: 2, // Duration of one cycle
       ease: "power1.inOut", // Smooth in and out motion
       yoyo: true, // Make the animation go back and forth
@@ -63,7 +63,7 @@ function Login() {
   return (
     <div className='bg-black h-[100vh] text-white'>
       <FaCodepen className='text-white text-3xl z-10 fixed mt-5 ml-[100px]' />
-      <Gradient ></Gradient>
+      <Gradient className='gradient2'></Gradient>
       <div>
 
         <Box className='flex flex-col justify-center h-[100vh] w-[40%] m-auto'>
@@ -94,7 +94,7 @@ function Login() {
             {error && (
               <p className='text-red-500 text-center mt-2'>{error}</p>
             )}
-            <h3 className='text-xs m-auto'>Don't have an account? <Link to="/register" className='text-[#ecf15ec3]'>SignUp</Link></h3>
+            <h3 className='text-sm m-auto'>Don't have an account? <Link to="/register" className='text-[#ecf15ec3]'>SignUp</Link></h3>
           </form>
           <Gradient2 className='absolute left-0 bottom-0 gradient2'></Gradient2>
         </Box>
@@ -111,9 +111,9 @@ const Gradient2 = styled.div`
   border-radius: 50%;
   z-index: 10;
   filter: blur(180px);
-  top:95%;
+  /* top:95%;*/
   right: 50%;
-  transform: translate(-50%,-50%);
+  /* transform: translate(-50%,-50%);  */
   /*left: -50%; */
 `
 
