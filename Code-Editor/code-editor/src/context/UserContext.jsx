@@ -10,7 +10,7 @@ export function UserProvider({ children }) {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/user', { withCredentials: true });
+                const response = await axios.get('https://code-editor-backend-7e6i.onrender.com/user', { withCredentials: true });
                 setUser(response.data.user);
             } catch (error) {
                 console.error('Failed to fetch user:', error);

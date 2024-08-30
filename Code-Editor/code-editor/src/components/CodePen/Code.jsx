@@ -17,7 +17,7 @@ function Code() {
         // Fetch the saved code when the component mounts
         const fetchCode = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/user/get-code', { withCredentials: true });
+                const response = await axios.get('https://code-editor-backend-7e6i.onrender.com/user/get-code', { withCredentials: true });
                 const { html, css, js } = response.data;
                 console.log('Response Data:', response.data);
                 setHtml(html);
@@ -30,23 +30,10 @@ function Code() {
 
         fetchCode();
     }, [setHtml, setCss, setJs]);
-    // useEffect(() => {
-    //     const saveCode = async () => {
-    //         try {
-    //             await axios.post('http://localhost:8000/user/save-code', { html, css, js }, { withCredentials: true });
-    //             // console.log("done", { html });
-
-    //         } catch (error) {
-    //             console.error('Error saving code:', error);
-    //         }
-    //     };
-
-    //     saveCode();
-    // }, [html, css, js]);
     useEffect(() => {
         const saveCodeDebounced = debounce(async () => {
             try {
-                await axios.post('http://localhost:8000/user/save-code', { html, css, js }, { withCredentials: true });
+                await axios.post('https://code-editor-backend-7e6i.onrender.com/user/save-code', { html, css, js }, { withCredentials: true });
             } catch (error) {
                 console.error('Error saving code:', error);
             }

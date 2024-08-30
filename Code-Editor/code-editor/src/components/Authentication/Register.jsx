@@ -24,7 +24,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/register', formData);
+      const response = await axios.post('https://code-editor-backend-7e6i.onrender.com/register', formData);
       console.log('Registration successful:', response.data);
       // Handle successful registration (e.g., redirect, show a message)
       navigate("/login")

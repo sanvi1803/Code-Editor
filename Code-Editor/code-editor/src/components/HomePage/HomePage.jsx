@@ -11,7 +11,7 @@ function HomePage() {
     const handleLogout = async () => {
         try {
             // Send a request to the logout endpoint
-            await axios.post('http://localhost:8000/logout', {}, {
+            await axios.post('https://code-editor-backend-7e6i.onrender.com/logout', {}, {
                 withCredentials: true,  // Ensure cookies are included
             });
 

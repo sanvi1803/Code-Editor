@@ -9,7 +9,7 @@ function ProtectedRoute({ children }) {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/home', { withCredentials: true });
+                const response = await axios.get('https://code-editor-backend-7e6i.onrender.com/home', { withCredentials: true });
                 if (response.status === 200) {
                     setIsAuthenticated(true);
                 }

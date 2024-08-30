@@ -12,7 +12,7 @@ const CodeEditorC = () => {
     const [language, setLanguage] = useState("javascript");
     const fetchCodeForLanguage = async (language) => {
         try {
-            const response = await axios.get(`http://localhost:8000/user/get-codes/${language}`, { withCredentials: true });
+            const response = await axios.get(`https://code-editor-backend-7e6i.onrender.com/user/get-codes/${language}`, { withCredentials: true });
             console.log(response);
             setValue(response.data.code || CODE_SNIPPETS[language]);
         } catch (error) {
