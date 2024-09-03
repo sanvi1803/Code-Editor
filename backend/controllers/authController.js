@@ -69,20 +69,20 @@ async function registerUser(req, res) {
         const { name, email, password } = req.body;
         console.log(req.body);
         if (!name) {
-            return res.status(400).send("Name fields are required.");
+            return res.status(400).json({ message: "Name fields are required." });
         }
         if (!email) {
-            return res.status(400).send("email fields are required.");
+            return res.status(400).json({ message: "email fields are required." });
         }
         if (!password) {
-            return res.status(400).send("Password fields are required.");
+            return res.status(400).json({ message: "Password fields are required." });
         }
 
 
         // Check if user already exists
         let user = await userModel.findOne({ email });
         if (user) {
-            return res.status(401).send("You already have an account, please login.");
+            return res.status(401).json({ message: "You already have an account, please login." });;
         }
 
         // Hash password and create user
@@ -99,10 +99,10 @@ async function registerUser(req, res) {
         const token = generateToken(user);
         res.cookie("token", token, { httpOnly: true, secure: false }); // Set secure: true in production
 
-        return res.status(201).send("User created successfully");
+        return res.status(201).json({ message: "User created successfully" });
     } catch (error) {
         console.error(error.message);
-        return res.status(500).send(`Server error!,${error.message}`);
+        return res.status(500).json({ message: `Server error!,${error.message}` });
     }
 }
 
@@ -124,7 +124,7 @@ async function loginUser(req, res) {
 
         // Generate token and set cookie
         const token = generateToken(user);
-        res.cookie("token", token, { httpOnly: true, secure: false }); // Set secure: true in production
+        res.cookie("token", token, { httpOnly: true, secure: true, sameSite: 'None' }); // Set secure: true in production
 
         return res.status(200).json({
             message: "Logged In successfully",
