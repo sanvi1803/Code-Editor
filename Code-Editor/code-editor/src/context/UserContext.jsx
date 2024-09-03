@@ -10,7 +10,7 @@ export function UserProvider({ children }) {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const response = await axios.get(`${BASE_URL}}/user`, { withCredentials: true });
+                const response = await axios.get(`${BASE_URL}/user`, { withCredentials: true });
                 setUser(response.data.user);
             } catch (error) {
                 console.error('Failed to fetch user:', error);

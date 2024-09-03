@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { BASE_URL } from "../../config/helper"
 function ProtectedRoute({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const navigate = useNavigate();
@@ -9,7 +10,7 @@ function ProtectedRoute({ children }) {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/home', { withCredentials: true });
+                const response = await axios.get(`${BASE_URL}/home`, { withCredentials: true });
                 if (response.status === 200) {
                     setIsAuthenticated(true);
                 }
