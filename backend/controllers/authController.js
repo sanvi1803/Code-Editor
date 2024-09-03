@@ -91,7 +91,7 @@ async function registerUser(req, res) {
         return res.status(201).send("User created successfully");
     } catch (error) {
         console.error(error.message);
-        return res.status(500).send("Server error");
+        return res.status(500).send(`Server error!,${error}`);
     }
 }
 

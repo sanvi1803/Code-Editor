@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
-import { BASE_URL } from "../../config/helper"
+import { BASE_URL } from "../config/helper"
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
