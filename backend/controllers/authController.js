@@ -67,6 +67,7 @@ const bcrypt = require("bcrypt");
 async function registerUser(req, res) {
     try {
         const { name, email, password } = req.body;
+        console.log(req.body);
         if (!name) {
             return res.status(400).send("Name fields are required.");
         }
@@ -76,7 +77,7 @@ async function registerUser(req, res) {
         if (!password) {
             return res.status(400).send("password fields are required.");
         }
-        console.log(req.body);
+
 
         // Check if user already exists
         let user = await userModel.findOne({ email });
