@@ -13,7 +13,7 @@ router.post('/register', registerUser) //wrote this register user function insid
 router.post('/login', loginUser) //wrote this register user function inside controller
 router.post('/logout', logout)
 router.get('/home', isLoggedIn, (req, res) => {
-    res.send("Welcome to the homepage");
+    res.status(200).json({ message: 'Welcome to the home page' });
 });
 
 router.get('/user', isLoggedIn, (req, res) => {
