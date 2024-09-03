@@ -67,6 +67,9 @@ const bcrypt = require("bcrypt");
 async function registerUser(req, res) {
     try {
         const { name, email, password } = req.body;
+        if (!name || !email || !password) {
+            return res.status(400).send("All fields are required.");
+        }
 
         // Check if user already exists
         let user = await userModel.findOne({ email });
@@ -91,7 +94,7 @@ async function registerUser(req, res) {
         return res.status(201).send("User created successfully");
     } catch (error) {
         console.error(error.message);
-        return res.status(500).send(`Server error!,${error}`);
+        return res.status(500).send(`Server error!,${error.message}`);
     }
 }
 
