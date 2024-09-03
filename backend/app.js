@@ -3,14 +3,14 @@ const express = require('express')
 const userRouter = require("./routes/userRouter")
 // const codeRouter = require("./routes/codeRouter")
 const app = express()
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 8000
 const cors = require("cors")
 const cookieParser = require("cookie-parser")
 const path = require("path")
 const mongoose = require('./config/mongoose-connection')
 
 const corsOptions = {
-    origin: 'http://localhost:5173', // Your frontend URL
+    origin: "http://localhost:5173", // Your frontend URL
     credentials: true, // Allow credentials (cookies) to be sent
 };
 app.use(express.json());
@@ -23,4 +23,4 @@ app.use("/", userRouter)
 // app.use("/user", codeRouter)
 
 // app.get('/', (req, res) => res.send('Hello World!'))
-app.listen(port, () => console.log(`Example app listening on port http://localhost:${port}`))
+app.listen(port, () => console.log(`Example app listening on port ${port}`))
