@@ -67,8 +67,14 @@ const bcrypt = require("bcrypt");
 async function registerUser(req, res) {
     try {
         const { name, email, password } = req.body;
-        if (!name || !email || !password) {
-            return res.status(400).send("All fields are required.");
+        if (!name) {
+            return res.status(400).send("Name fields are required.");
+        }
+        if (!email) {
+            return res.status(400).send("email fields are required.");
+        }
+        if (!password) {
+            return res.status(400).send("password fields are required.");
         }
 
         // Check if user already exists
