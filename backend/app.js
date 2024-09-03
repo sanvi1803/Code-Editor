@@ -10,7 +10,7 @@ const path = require("path")
 const mongoose = require('./config/mongoose-connection')
 
 const corsOptions = {
-    origin: "http://localhost:5173", // Your frontend URL
+    origin: process.env.FRONTEND_URL, // Your frontend URL
     credentials: true, // Allow credentials (cookies) to be sent
 };
 app.use(express.json());
