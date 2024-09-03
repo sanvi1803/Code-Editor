@@ -76,6 +76,7 @@ async function registerUser(req, res) {
         if (!password) {
             return res.status(400).send("password fields are required.");
         }
+        console.log(req.body);
 
         // Check if user already exists
         let user = await userModel.findOne({ email });
