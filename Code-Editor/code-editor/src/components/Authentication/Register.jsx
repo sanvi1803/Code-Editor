@@ -7,6 +7,7 @@ import Gradient from './Gradient';
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import gsap from 'gsap';
+import { BASE_URL } from "../../config/helper"
 function Register() {
   const [formData, setFormData] = useState({
     name: '',
@@ -24,7 +25,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/register', formData);
+      const response = await axios.post(`${BASE_URL}/register`, formData);
       console.log('Registration successful:', response.data);
       // Handle successful registration (e.g., redirect, show a message)
       navigate("/login")

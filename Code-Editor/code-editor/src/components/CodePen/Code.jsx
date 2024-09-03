@@ -10,14 +10,15 @@ import { useContext } from 'react';
 import { DataContext } from '../../context/DataContext';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
-import debounce from 'lodash/debounce'
+import debounce from 'lodash/debounce';
+import { BASE_URL } from "../../config/helper"
 function Code() {
     const { html, setHtml, css, setCss, js, setJs } = useContext(DataContext)
     useEffect(() => {
         // Fetch the saved code when the component mounts
         const fetchCode = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/user/get-code', { withCredentials: true });
+                const response = await axios.get(`${BASE_URL}/user/get-code`, { withCredentials: true });
                 const { html, css, js } = response.data;
                 console.log('Response Data:', response.data);
                 setHtml(html);
@@ -34,7 +35,7 @@ function Code() {
     useEffect(() => {
         const saveCodeDebounced = debounce(async () => {
             try {
-                await axios.post('http://localhost:8000/user/save-code', { html, css, js }, { withCredentials: true });
+                await axios.post(`${BASE_URL}/user/save-code`, { html, css, js }, { withCredentials: true });
             } catch (error) {
                 console.error('Error saving code:', error);
             }

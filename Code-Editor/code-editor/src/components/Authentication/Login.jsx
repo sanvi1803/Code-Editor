@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import gsap from 'gsap';
 import { useUser } from '../../context/UserContext';
+import { BASE_URL } from "../../config/helper"
 function Login() {
   const [formData, setFormData] = useState({
     email: '',
@@ -31,7 +32,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/login', formData, { withCredentials: true });
+      const response = await axios.post(`${BASE_URL}/login`, formData, { withCredentials: true });
       console.log('Login successful:', response.data);
       setUser(response.data.user);
       console.log(response.data.user);

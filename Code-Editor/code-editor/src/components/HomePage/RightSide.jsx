@@ -5,10 +5,8 @@ import { useEffect } from 'react';
 import { useUser } from '../../context/UserContext';
 function RightSide() {
     const { user } = useUser();
-    // const name = user.user.name;
-    // console.log(name);
     useEffect(() => {
-        console.log('User in RightSide:', user);
+        // console.log('User in RightSide:', user);
         AnimateButtons(); // Trigger the animation when the component mounts
     }, [user]);
 

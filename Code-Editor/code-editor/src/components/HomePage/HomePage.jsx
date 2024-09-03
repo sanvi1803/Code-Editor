@@ -4,14 +4,14 @@ import LeftSide from './LeftSide'
 import RightSide from './RightSide'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-
+import { BASE_URL } from "../../config/helper"
 function HomePage() {
     const navigate = useNavigate();
     // Logout handler function
     const handleLogout = async () => {
         try {
             // Send a request to the logout endpoint
-            await axios.post('https://code-editor-backend-7e6i.onrender.com/logout', {}, {
+            await axios.post(`${BASE_URL}/logout`, {}, {
                 withCredentials: true,  // Ensure cookies are included
             });
 

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { BASE_URL } from "../../config/helper"
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
@@ -10,7 +10,7 @@ export function UserProvider({ children }) {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/user', { withCredentials: true });
+                const response = await axios.get(`${BASE_URL}}/user`, { withCredentials: true });
                 setUser(response.data.user);
             } catch (error) {
                 console.error('Failed to fetch user:', error);

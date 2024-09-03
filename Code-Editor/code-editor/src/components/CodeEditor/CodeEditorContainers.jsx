@@ -6,13 +6,14 @@ import LanguageSelector from "./LanguageSelector";
 import { CODE_SNIPPETS } from "./constants";
 import Output from "./Output";
 import axios from 'axios'
+import { BASE_URL } from "../../config/helper"
 const CodeEditorC = () => {
     const editorRef = useRef();
     const [value, setValue] = useState("");
     const [language, setLanguage] = useState("javascript");
     const fetchCodeForLanguage = async (language) => {
         try {
-            const response = await axios.get(`http://localhost:8000/user/get-codes/${language}`, { withCredentials: true });
+            const response = await axios.get(`${BASE_URL}/user/get-codes/${language}`, { withCredentials: true });
             console.log(response);
             setValue(response.data.code || CODE_SNIPPETS[language]);
         } catch (error) {

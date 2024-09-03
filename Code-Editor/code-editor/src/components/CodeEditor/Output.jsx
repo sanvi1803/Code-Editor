@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Box, Button, Text, useToast } from "@chakra-ui/react";
 import { executeCode } from "./api";
 import { styled } from "styled-components";
-import axios from 'axios'
+import axios from 'axios';
+import { BASE_URL } from "../../config/helper"
 const Output = ({ editorRef, language }) => {
     const toast = useToast();
     const [output, setOutput] = useState(null);
@@ -14,7 +15,7 @@ const Output = ({ editorRef, language }) => {
         if (!editorRef.current) return;
         const sourceCode = editorRef.current.getValue();
         try {
-            await axios.post('http://localhost:8000/user/save-codes', { language, code: sourceCode }, { withCredentials: true });
+            await axios.post(`${BASE_URL}/user/save-codes`, { language, code: sourceCode }, { withCredentials: true });
             toast({
                 title: "Code Saved",
                 description: "Your code was saved successfully.",
