@@ -13,11 +13,13 @@ const corsOptions = {
     origin: process.env.FRONTEND_URL, // Your frontend URL
     credentials: true, // Allow credentials (cookies) to be sent
 };
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")))
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
-app.use(cors(corsOptions));
+
 
 app.use("/", userRouter)
 // app.use("/user", codeRouter)
