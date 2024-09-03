@@ -29,19 +29,19 @@ const userModel = require("../models/user.model");
 const isLoggedIn = async (req, res, next) => {
     const token = req.cookies.token;
     if (!token) {
-        return res.status(401).send("Access Denied: Please login.");
+        return res.status(401).json({ message: "Access Denied: Please login." });
     }
     try {
         const decoded = jwt.verify(token, process.env.JWT_KEY);
         // console.log('Decoded JWT:', decoded);
         const user = await userModel.findOne({ email: decoded.email })
             .select("-password");
-        if (!user) return res.status(404).send("User not found");
+        if (!user) return res.status(404).json({ message: "User not found" });
         req.user = user;
         next();
     } catch (error) {
         // console.log('JWT verification failed:', error);
-        return res.status(401).send("Invalid token. Please log in again.");
+        return res.status(401).json({ message: "Invalid token. Please log in again." });
     }
 };
 
