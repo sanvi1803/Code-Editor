@@ -75,7 +75,7 @@ async function registerUser(req, res) {
             return res.status(400).send("email fields are required.");
         }
         if (!password) {
-            return res.status(400).send("password fields are required.");
+            return res.status(400).send("Password fields are required.");
         }
 
 
