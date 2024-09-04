@@ -132,7 +132,7 @@ const Gradient2 = styled.div`
 `
 
 const Para = styled.p`
-    font-size: 6rem;
+    /* font-size: 6rem; */
     font-weight: 700;
     z-index: 1;
     -webkit-text-stroke: 2px #c4c4c4c2;

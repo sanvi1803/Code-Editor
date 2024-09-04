@@ -68,7 +68,7 @@ function Login() {
       <div>
 
         <Box className='flex flex-col justify-center h-[100vh] w-[40%] m-auto'>
-          <Head>Login to Codik</Head>
+          <Head>Login to <Para>Codik</Para></Head>
           <form
             className='bg-[#ffffff10] px-5 py-10 rounded-lg flex flex-col gap-3 backdrop-blur-md'
             onSubmit={handleSubmit}>
@@ -130,3 +130,10 @@ const Head = styled.h1`
   justify-content: center;
 `
 
+const Para = styled.p`
+    /* font-size: 6rem; */
+    font-weight: 700;
+    z-index: 1;
+    -webkit-text-stroke: 2px #c4c4c4c2;
+    color:transparent;
+`
