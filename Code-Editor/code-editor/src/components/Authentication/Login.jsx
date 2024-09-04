@@ -139,8 +139,3 @@ const Para = styled.p`
     color:transparent;
     margin-left: 10px;
 `
-
-const head = document.querySelector("h1");
-head.addEventListener("click",()=>{
-  alert("hey");
-})
