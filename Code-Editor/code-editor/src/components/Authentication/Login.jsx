@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from 'react';
 import styled from 'styled-components'
-import { FaCodepen } from "react-icons/fa";
+// import { FaCodepen } from "react-icons/fa";
+import { FaLaptopCode } from "react-icons/fa";
 import Input from './Input';
 import Gradient from './Gradient';
 import { Link } from "react-router-dom"
@@ -63,7 +64,7 @@ function Login() {
 
   return (
     <div className='bg-black h-[100vh] text-white'>
-      <FaCodepen className='text-white text-3xl z-10 fixed mt-5 ml-[100px]' />
+      <FaLaptopCode className='text-white text-3xl z-10 fixed mt-5 ml-[100px]' />
       <Gradient className='gradient2'></Gradient>
       <div>
 
@@ -138,3 +139,8 @@ const Para = styled.p`
     color:transparent;
     margin-left: 10px;
 `
+
+const head = document.querySelector("h1");
+head.addEventListener("click",()=>{
+  alert("hey");
+})
