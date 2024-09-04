@@ -124,7 +124,7 @@ const Gradient2 = styled.div`
 const Box = styled.div`
 `
 const Head = styled.h1`
-  font-size:2rem;
+  font-size:3rem;
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
@@ -136,4 +136,5 @@ const Para = styled.p`
     z-index: 1;
     -webkit-text-stroke: 2px #c4c4c4c2;
     color:transparent;
+    margin-left: 10px;
 `

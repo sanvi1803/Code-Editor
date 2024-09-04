@@ -111,7 +111,7 @@ export default Register
 const Box = styled.div`
 `
 const Head = styled.h1`
-  font-size:2rem;
+  font-size:3rem;
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
@@ -124,11 +124,7 @@ const Gradient2 = styled.div`
   border-radius: 50%;
   z-index: 10;
   filter: blur(180px);
-  /* top:80%; */
-  /* bottom: -50%; */
   right: 80%;
-  /* transform: translate(-50%,-50%); */
-  /*left: -50%; */
 `
 
 const Para = styled.p`
@@ -137,4 +133,6 @@ const Para = styled.p`
     z-index: 1;
     -webkit-text-stroke: 2px #c4c4c4c2;
     color:transparent;
+    margin-left: 10px;
+
 `
