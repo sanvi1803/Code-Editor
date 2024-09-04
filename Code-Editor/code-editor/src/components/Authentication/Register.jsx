@@ -1,8 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { FaLaptopCode } from "react-icons/fa";
-// import { FaCodepen } from "react-icons/fa";
+import { FaCodepen } from "react-icons/fa";
 import Input from './Input';
 import Gradient from './Gradient';
 import { Link, useNavigate } from "react-router-dom"
@@ -53,7 +52,7 @@ function Register() {
   }, []);
   return (
     <div className='bg-black h-[100vh] text-white'>
-      <FaLaptopCode className='text-white text-3xl z-10 fixed mt-5 ml-[100px]' />
+      <FaCodepen className='text-white text-3xl z-10 fixed mt-5 ml-[100px]' />
       <Gradient className='gradient2'></Gradient>
       <div>
 
