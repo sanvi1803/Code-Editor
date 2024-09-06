@@ -3,7 +3,7 @@ import { Container } from "./Container"
 import styled from "styled-components"
 import { useEffect } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from '../../../node_modules/gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 const Features = () => {
     useEffect(() => {

@@ -1,7 +1,7 @@
 import { Container } from "./Container";
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from '../../../node_modules/gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
 gsap.registerPlugin(ScrollTrigger);
