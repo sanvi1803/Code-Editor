@@ -18,7 +18,7 @@ export default CodeForge1*/
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from '../../../node_modules/gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Container } from "./Container";
 
 gsap.registerPlugin(ScrollTrigger);
