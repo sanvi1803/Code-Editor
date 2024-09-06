@@ -5,14 +5,15 @@ import CodePenEditor from './components/CodePen/CodePenEditor';
 import Register from './components/Authentication/Register';
 import Login from './components/Authentication/Login';
 import ProtectedRoute from './components/Authentication/ProtectedRoute'
+import LandingPage from './components/LandingPage/LandingPage';
 import { UserProvider } from './context/UserContext';
 function App() {
   return (
     <UserProvider>
       <Router>
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={
             <ProtectedRoute>

@@ -51,8 +51,8 @@ function Register() {
     });
   }, []);
   return (
-    <div className='bg-black h-[100vh] text-white'>
-      <FaCodepen className='text-white text-3xl z-10 fixed mt-5 ml-[100px]' />
+    <Container className='bg-black h-[100vh] text-white'>
+      <Link to="/"><FaCodepen className='text-white text-3xl z-10 fixed mt-5 ml-[100px]' /></Link>
       <Gradient className='gradient2'></Gradient>
       <div>
 
@@ -102,7 +102,7 @@ function Register() {
         </Box>
 
       </div >
-    </div>
+    </Container>
   )
 }
 
@@ -135,4 +135,8 @@ const Para = styled.p`
     color:transparent;
     margin-left: 10px;
 
+`
+const Container = styled.div`
+  background-image: radial-gradient(#afaaaa36 1px,transparent 1px);
+  background-size: 60px 60px;
 `

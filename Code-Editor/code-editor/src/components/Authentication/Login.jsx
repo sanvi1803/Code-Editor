@@ -62,8 +62,8 @@ function Login() {
   }, []);
 
   return (
-    <div className='bg-black h-[100vh] text-white'>
-      <FaCodepen className='text-white text-3xl z-10 fixed mt-5 ml-[100px]' />
+    <Container className='bg-black h-[100vh] text-white'>
+      <Link to="/"><FaCodepen className='text-white text-3xl z-10 fixed mt-5 ml-[100px]' /></Link>
       <Gradient className='gradient2'></Gradient>
       <div>
 
@@ -100,7 +100,7 @@ function Login() {
           <Gradient2 className='absolute left-0 bottom-0 gradient2'></Gradient2>
         </Box>
       </div >
-    </div>
+    </Container>
   )
 }
 
@@ -117,10 +117,6 @@ const Gradient2 = styled.div`
   /* transform: translate(-50%,-50%);  */
   /*left: -50%; */
 `
-
-
-
-
 const Box = styled.div`
 `
 const Head = styled.h1`
@@ -137,4 +133,8 @@ const Para = styled.p`
     -webkit-text-stroke: 2px #c4c4c4c2;
     color:transparent;
     margin-left: 10px;
+`
+const Container = styled.div`
+  background-image: radial-gradient(#afaaaa36 1px,transparent 1px);
+  background-size: 60px 60px;
 `
