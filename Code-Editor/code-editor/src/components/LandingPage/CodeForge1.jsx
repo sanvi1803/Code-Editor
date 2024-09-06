@@ -1,28 +1,8 @@
-/* import { Container } from "./Container";
-import React from 'react'
-
-const CodeForge1 = () => {
-    return (
-
-        <Container id="code-editor" className="text-white">
-            <img src="../../../public/Group 1.png" alt="laptop" className="m-auto p-14 h-[35rem] w-[65rem] " />
-            <div className="flex items-center flex-col justify-center">
-                <h3 className="text-sm text-zinc-500 uppercase">Execute Process Support for Your Code</h3>
-                <p className="text-center text-[15px] text-[#e7e4e4dd]">Write code so smooth, even your <span className="text-blue-400">bugs</span> take a vacation! <br /> Execute like a pro, save like a boss, and pick up right where you left off every time you <span className="text-green-400">log in!</span></p>
-            </div>
-        </Container>
-
-    )
-}
-export default CodeForge1*/
-
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Container } from "./Container";
-
 gsap.registerPlugin(ScrollTrigger);
-
 const CodeForge1 = () => {
     const containerRef = useRef();
     const imageRef = useRef();
