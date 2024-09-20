@@ -13,10 +13,13 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    //for codePen
     code: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'codePen'
     },
+
+    //for codeForge
     codes: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Code'  // References the 'Code' model

@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/all';
 import { Container } from "./Container";
 gsap.registerPlugin(ScrollTrigger);
 const CodeForge1 = () => {
-    const containerRef = useRef();
-    const imageRef = useRef();
-    const textRef = useRef();
+    const containerRef = useRef(null);
+    const imageRef = useRef(null);
+    const textRef = useRef(null);
 
     useEffect(() => {
         const container = containerRef.current;

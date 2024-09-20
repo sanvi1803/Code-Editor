@@ -22,7 +22,6 @@ const LandingPage = () => {
                 <CodePen2 />
                 <Features />
                 <Contact />
-                
             </ReactLenis>
         </>
     )
