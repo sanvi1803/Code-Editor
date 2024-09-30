@@ -8,7 +8,9 @@ import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import gsap from 'gsap';
 import { BASE_URL } from "../../config/helper"
+import { useToast } from '@chakra-ui/react';
 function Register() {
+  const toast = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -31,9 +33,16 @@ function Register() {
       navigate("/login")
     } catch (error) {
       console.error('Registration failed:', error.response.data);
-      setTimeout(() => {
-        setError("");
-      }, 3000);
+
+      toast({
+        title: "Registration failed.",
+        description: error.response?.data.message || "An error occurred, please try again.",
+        status: "error",
+        duration: 2000,
+        isClosable: true,
+        
+      });
+
       // Handle registration failure (e.g., display error message)
     }
   };

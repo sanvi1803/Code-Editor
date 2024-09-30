@@ -22,7 +22,7 @@ const Contact = () => {
                 <li onClick={() => handleScrollTo('codepen')} className='cursor-pointer'>CodePen</li>
                 <li onClick={() => handleScrollTo('contact')} className='cursor-pointer'>Contact</li>
             </ul>
-            <h3 className="text-sm mt-3  p-3 flex items-end justify-center"><span className="text-zinc-400 ">Designed with 💛 by</span> &nbsp; Sanvi</h3>
+            <h3 className="text-sm mt-3 p-3 flex items-end justify-center"><span className="text-zinc-400 ">Designed with 💛 by</span> &nbsp; Sanvi</h3>
         </Box>
     )
 }

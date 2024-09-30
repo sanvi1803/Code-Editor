@@ -10,17 +10,17 @@ import axios from 'axios';
 import gsap from 'gsap';
 import { useUser } from '../../context/UserContext';
 import { BASE_URL } from "../../config/helper"
+import { Toast, useToast } from "@chakra-ui/react"
 function Login() {
+  const toast = useToast();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
   const { setUser } = useUser();
-
   const [error, setError] = useState("")
 
   const navigate = useNavigate();
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -42,10 +42,15 @@ function Login() {
     } catch (error) {
       console.error('Login failed:', error.response?.data || error.message);
       // Handle login failure (e.g., display error message)
-      setError(error.response?.data || "Invalid Credentials");
-      setTimeout(() => {
-        setError("");
-      }, 3000);
+
+      toast({
+        title: "Invalid Login Credentials",
+        description: error.message || "Unable to run code",
+        status: "error",
+        duration: 2000,
+        isClosable: true,
+      });
+
     }
   };
 

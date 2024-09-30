@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import Editor from './Editor'
 import { useEffect } from 'react';
 import axios from 'axios';

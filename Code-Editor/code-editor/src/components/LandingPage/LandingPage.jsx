@@ -13,17 +13,15 @@ import "./App.css"
 const LandingPage = () => {
 
     return (
-        <>
-            <ReactLenis root>
-                <Landing />
-                <CodeForge1 />
-                <CodeForge2 />
-                <CodePen1 />
-                <CodePen2 />
-                <Features />
-                <Contact />
-            </ReactLenis>
-        </>
+        <ReactLenis root>
+            <Landing />
+            <CodeForge1 />
+            <CodeForge2 />
+            <CodePen1 />
+            <CodePen2 />
+            <Features />
+            <Contact />
+        </ReactLenis>
     )
 }
 

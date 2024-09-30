@@ -3,7 +3,6 @@ import { useState } from 'react'
 import styled from 'styled-components';
 import { MdCloseFullscreen } from "react-icons/md";
 import { Controlled as CodeMirror } from 'react-codemirror2'
-
 import 'codemirror/mode/xml/xml';
 import 'codemirror/mode/css/css';
 import 'codemirror/mode/javascript/javascript';
@@ -18,33 +17,33 @@ function Editor({ heading, logo, value, onChange }) {
         onChange(value);
     }
     return (
-        <>
-            <Container style={open ? null : { flexGrow: 0 }}>
-                <Box className='flex items-center justify-between bg-[#000] text-white font-medium rounded-br-md rounded-bl-md'>
-                    <Box className='flex items-center bg-[#1d1e22] py-1 px-2 gap-2 rounded-tr-md rounded-tl-md'>
-                        <Box className='w-5 h-5 items-center flex justify-center rounded-md'>
-                            {logo}
-                        </Box>
-                        {heading}
+
+        <Container style={open ? null : { flexGrow: 0 }}>
+            <Box className='flex items-center justify-between bg-[#000] text-white font-medium rounded-br-md rounded-bl-md'>
+                <Box className='flex items-center bg-[#1d1e22] py-1 px-2 gap-2 rounded-tr-md rounded-tl-md'>
+                    <Box className='w-5 h-5 items-center flex justify-center rounded-md'>
+                        {logo}
                     </Box>
-                    <MdCloseFullscreen
-                        className='cursor-pointer font-sm'
-                        onClick={() => setOpen(prevState => !prevState)}
-                    />
+                    {heading}
                 </Box>
-                <CodeMirror
-                    className='controlled-editor'
-                    value={value}
-                    onBeforeChange={handleChange}
-                    options={
-                        {
-                            theme: 'material',
-                            lineNumbers: true,
-                        }
-                    }
+                <MdCloseFullscreen
+                    className='cursor-pointer font-sm'
+                    onClick={() => setOpen(prevState => !prevState)}
                 />
-            </Container>
-        </>
+            </Box>
+            <CodeMirror
+                className='controlled-editor'
+                value={value}
+                onBeforeChange={handleChange}
+                options={
+                    {
+                        theme: 'material',
+                        lineNumbers: true,
+                    }
+                }
+            />
+        </Container>
+
     )
 }
 

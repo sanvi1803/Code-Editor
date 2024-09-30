@@ -32,9 +32,7 @@ const Landing = () => {
                         Experience.
                     </Para>
                 </Content >
-                <div className="w-full flex items-center justify-center">
-
-                </div>
+               
             </div>
         </Container>
     )
