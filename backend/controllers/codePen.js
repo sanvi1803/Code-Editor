@@ -6,7 +6,7 @@ async function getCode(req, res) {
         // console.log('Populated User:', user);
         // console.log('User:', user);
         // console.log(req);
-        console.log(user.code);
+        // console.log(user.code);
 
         if (user && user.code) {
             console.log('Code data:', user.code);
